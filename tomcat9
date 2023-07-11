@@ -2,9 +2,9 @@
 - name: install tomcat9 with deployment server
   hosts: deploy
   tasks:
-    - name: install apache2
+    - name: install tomcat9
       apt:
-        name: apache2
+        name: tomcat9
         state: present
         update_cache: yes
     - name: change port from 8080 to 9090
@@ -14,6 +14,6 @@
         path: /etc/tomcat9/server.xml
     - name: restart tomcat9
       service:
-        name: apache2
+        name: tomcat9
         state: restarted
 ...
